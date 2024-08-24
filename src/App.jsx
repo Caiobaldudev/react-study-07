@@ -1,14 +1,21 @@
 import React from "react";
-import Button from "./components/Button/Button";
-import Contato from "./components/Contato/Contato";
+import Header from "./components/Header/Header";
+// import Button from "./components/Button/Button";
+// import Contato from "./components/Contato/Contato";
 const Contato = React.lazy(() => import("./components/Contato/Contato"));
 
 const App = () => {
   const [ativo, setAtivo] = React.useState(false);
+  const [contar, setContar] = React.useState(0)
   return (
     <div>
+      {/* Memo  */}
+      <Header/>
+      <button onClick={() => setContar(contar + 1)}>{contar}</button>
+      {/* --- */}
+
       {/* PropTypes */}
-      <Button width={300}>Clique Aqui</Button>
+      {/* <Button width={300}>Clique Aqui</Button> */}
       {/* --- */}
 
       {/* Lazy & Suspense  */}
